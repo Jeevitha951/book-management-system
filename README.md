@@ -100,7 +100,6 @@ npm start
 
 Create a separate `.env.test` file inside the `/backend` directory:
 
-```env
 MONGO_URI=mongodb+srv://<your-user>:<pass>@cluster.mongodb.net/book_management_test
 JWT_SECRET=your_test_jwt_secret
 
@@ -110,7 +109,6 @@ JWT_SECRET=your_test_jwt_secret
 
 Navigate to the backend folder and run:
 
-```bash
 cd backend
 npm test
 
