@@ -47,13 +47,18 @@ cd backend
 npm install
 
 
-### ✅ Configure `.env`
+###  Configure `.env`
 
 Create a `.env` file inside the `backend/` directory and add the following:
+
 env
+
 PORT=5000
+
 MONGO_URI=your_mongo_atlas_connection_string
+
 JWT_SECRET=your_jwt_secret_key
+
 
 ---
 
