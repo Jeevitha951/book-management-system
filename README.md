@@ -41,8 +41,6 @@ cd book-management-app
 ## 2. 🔧 Backend Setup
 
 Navigate to the backend folder and install dependencies:
-
-```bash
 cd backend
 npm install
 
@@ -50,8 +48,7 @@ npm install
 ### ✅ Configure `.env`
 
 Create a `.env` file inside the `backend/` directory and add the following:
-
-```env
+env
 PORT=5000
 MONGO_URI=your_mongo_atlas_connection_string
 JWT_SECRET=your_jwt_secret_key
@@ -62,7 +59,6 @@ JWT_SECRET=your_jwt_secret_key
 
 Navigate to the frontend folder, install dependencies, and start the development server:
 
-```bash
 cd ../frontend
 npm install
 npm start
