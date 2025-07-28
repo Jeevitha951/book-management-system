@@ -41,6 +41,7 @@ cd book-management-app
 ## 2. 🔧 Backend Setup
 
 Navigate to the backend folder and install dependencies:
+
 cd backend
 npm install
 
