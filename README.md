@@ -38,6 +38,7 @@ A full-stack web application for managing books with **User Authentication** and
 git clone <repo-url>
 cd book-management-app
 
+---
 
 ## 2. 🔧 Backend Setup
 
@@ -57,6 +58,7 @@ PORT=5000
 MONGO_URI=your_mongo_atlas_connection_string
 JWT_SECRET=your_jwt_secret_key
 
+---
 
 ## 3. 💻 Frontend Setup
 
@@ -68,7 +70,7 @@ npm install
 npm start
 
 
-
+---
 
 ## 4. 📡 API Routes
 
@@ -80,6 +82,7 @@ npm start
 | POST   | `/api/users/login`    | Login and get JWT token |
 
 
+---
 
 ### 🔒 Protected Routes
 
@@ -91,7 +94,7 @@ npm start
 | DELETE | `/api/books/:id`   | Admin  | Delete a book    |
 
 
-
+---
 
 ## 🧪 Testing (Unit Tests)
 
@@ -107,6 +110,7 @@ Create a separate `.env.test` file inside the `/backend` directory:
 MONGO_URI=mongodb+srv://<your-user>:<pass>@cluster.mongodb.net/book_management_test
 JWT_SECRET=your_test_jwt_secret
 
+---
 
 ### ▶️ Run Tests
 
@@ -116,11 +120,15 @@ Navigate to the backend folder and run:
 cd backend
 npm test
 
+---
+
 ### 📊 Test Coverage
 
 - `auth.test.js` — Tests user registration and login functionality.
 - `rbac.test.js` — Tests role-based access control (RBAC) for book routes.
 
+
+---
 
 ## 📄 Author
 
