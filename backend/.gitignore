@@ -1,5 +1,7 @@
 # Ignore environment variables
 .env
+backend/.env
+backend/.env.test
 
 # Ignore dependencies
 node_modules/
@@ -7,5 +9,5 @@ node_modules/
 # Ignore logs
 *.log
 
-# Ignore coverage reports
+# Ignore test coverage reports
 coverage/
