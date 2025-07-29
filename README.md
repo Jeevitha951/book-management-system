@@ -45,6 +45,7 @@ Navigate to the backend folder and install dependencies:
 
 - cd backend
 - npm install
+- node server.js
 
 
 ###  Configure `.env`
