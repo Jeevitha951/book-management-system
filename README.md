@@ -33,9 +33,9 @@ A full-stack web application for managing books with **User Authentication** and
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the Repository
-git clone <repo-url>
 
-cd book-management-app
+- git clone <repo-url>
+- cd book-management-app
 
 ---
 
