@@ -91,6 +91,7 @@ Navigate to the frontend folder, install dependencies, and start the development
 | POST   | `/api/books`       | Admin  | Add a new book   |
 | PUT    | `/api/books/:id`   | Admin  | Update a book    |
 | DELETE | `/api/books/:id`   | Admin  | Delete a book    |
+| PUT    |`/api/users/promote`| Admin  | Promote a user to admin role|
 
 
 ---
