@@ -33,8 +33,9 @@ A full-stack web application for managing books with **User Authentication** and
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the Repository
-git clone <repo-url>
-cd book-management-app
+
+- git clone <repo-url>
+- cd book-management-app
 
 ---
 
@@ -42,9 +43,9 @@ cd book-management-app
 
 Navigate to the backend folder and install dependencies:
 
-cd backend
-
-npm install
+- cd backend
+- npm install
+- node server.js
 
 
 ###  Configure `.env`
@@ -52,12 +53,9 @@ npm install
 Create a `.env` file inside the `backend/` directory and add the following:
 
 env
-
-PORT=5000
-
-MONGO_URI=your_mongo_atlas_connection_string
-
-JWT_SECRET=your_jwt_secret_key
+- PORT=5000
+- MONGO_URI=your_mongo_atlas_connection_string
+- JWT_SECRET=your_jwt_secret_key
 
 
 ---
@@ -66,9 +64,9 @@ JWT_SECRET=your_jwt_secret_key
 
 Navigate to the frontend folder, install dependencies, and start the development server:
 
-cd ../frontend
-npm install
-npm start
+- cd ../frontend
+- npm install
+- npm start
 
 
 ---
@@ -93,6 +91,7 @@ npm start
 | POST   | `/api/books`       | Admin  | Add a new book   |
 | PUT    | `/api/books/:id`   | Admin  | Update a book    |
 | DELETE | `/api/books/:id`   | Admin  | Delete a book    |
+| PUT    |`/api/users/promote`| Admin  | Promote a user to admin role|
 
 
 ---
@@ -107,8 +106,8 @@ npm start
 
 Create a separate `.env.test` file inside the `/backend` directory:
 
-MONGO_URI=mongodb+srv://<your-user>:<pass>@cluster.mongodb.net/book_management_test
-JWT_SECRET=your_test_jwt_secret
+- MONGO_URI=mongodb+srv://<your-user>:<pass>@cluster.mongodb.net/book_management_test
+- JWT_SECRET=your_test_jwt_secret
 
 ---
 
@@ -116,8 +115,8 @@ JWT_SECRET=your_test_jwt_secret
 
 Navigate to the backend folder and run:
 
-cd backend
-npm test
+- cd backend
+- npm test
 
 ---
 
