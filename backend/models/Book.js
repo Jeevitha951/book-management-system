@@ -16,6 +16,10 @@ const bookSchema = new mongoose.Schema(
     publishedYear: {
       type: Number,
     },
+    category: {
+      type: String,
+      default: 'General',
+    },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
