@@ -8,17 +8,17 @@ const BookForm = ({ onBookAdded, editingBook, onDoneEditing }) => {
     author: '',
     description: '',
     publishedYear: '',
-    category: '', // ✅ Add category here
+    category: '',
   });
 
   useEffect(() => {
     if (editingBook) {
       setForm({
-        title: editingBook.title,
+        title: editingBook.title, 
         author: editingBook.author,
-        description: editingBook.description,
-        publishedYear: editingBook.publishedYear,
-        category: editingBook.category || '', // ✅ Load existing category
+        description: editingBook.description || '',
+        publishedYear: editingBook.publishedYear || '',
+        category: editingBook.category || '',
       });
     } else {
       setForm({ title: '', author: '', description: '', publishedYear: '', category: '' });
@@ -32,13 +32,19 @@ const BookForm = ({ onBookAdded, editingBook, onDoneEditing }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // ✅ Ensure category is "Fiction" if empty
+    const formData = {
+      ...form,
+      category: form.category.trim() === '' ? 'Fiction' : form.category,
+    };
+
     try {
       if (editingBook) {
-        await api.put(`/books/${editingBook._id}`, form);
+        await api.put(`/books/${editingBook._id}`, formData);
         alert('Book updated successfully!');
         onDoneEditing();
       } else {
-        await api.post('/books', form);
+        await api.post('/books', formData);
         alert('Book added successfully!');
       }
 
@@ -112,4 +118,3 @@ const BookForm = ({ onBookAdded, editingBook, onDoneEditing }) => {
 };
 
 export default BookForm;
-

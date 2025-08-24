@@ -18,7 +18,7 @@ const bookSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      default: 'General',
+      default: 'Fiction', // ✅ Changed from 'General' to 'Fiction'
     },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,

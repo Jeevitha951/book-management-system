@@ -3,7 +3,7 @@ jest.setTimeout(20000);
 const request = require('supertest');
 const app = require('../app');
 const mongoose = require('mongoose');
-const Book = require('../models/Book');
+const Book = require('../models/book');
 const User = require('../models/User');
 
 let adminToken, userToken;
@@ -70,6 +70,6 @@ describe('RBAC Tests', () => {
       .set('Authorization', `Bearer ${userToken}`); 
 
     expect(res.statusCode).toBe(200);
-    expect(Array.isArray(res.body)).toBe(true);
+    expect(Array.isArray(res.body.books)).toBe(true);
   });
 });

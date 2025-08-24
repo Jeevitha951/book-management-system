@@ -1,4 +1,4 @@
-const Book = require('../models/Book');
+const Book = require('../models/book');
 
 // @desc    Get all books with optional filters + pagination
 // @route   GET /api/books
@@ -35,15 +35,6 @@ const getBooks = async (req, res) => {
       .skip(skip)
       .limit(Number(limit));
 
-    console.log('Pagination Debug:', {
-      query,
-      page,
-      limit,
-      skip,
-      totalBooks,
-      returnedCount: books.length,
-    });
-
     res.json({
       books,
       currentPage: Number(page),
@@ -60,10 +51,15 @@ const getBooks = async (req, res) => {
 // @route   POST /api/books
 // @access  Private (admin)
 const createBook = async (req, res) => {
-  const { title, author, description, publishedYear, category } = req.body;
+  let { title, author, description, publishedYear, category } = req.body;
 
   if (!title || !author) {
     return res.status(400).json({ message: 'Title and author are required' });
+  }
+
+  // ✅ Ensure default category is "Fiction" if not provided
+  if (!category || category.trim() === '') {
+    category = 'Fiction';
   }
 
   try {
@@ -88,7 +84,7 @@ const createBook = async (req, res) => {
 // @route   PUT /api/books/:id
 // @access  Private (admin)
 const updateBook = async (req, res) => {
-  const { title, author, description, publishedYear, category } = req.body;
+  let { title, author, description, publishedYear, category } = req.body;
 
   try {
     const book = await Book.findById(req.params.id);
@@ -97,11 +93,18 @@ const updateBook = async (req, res) => {
       return res.status(404).json({ message: 'Book not found' });
     }
 
+    // ✅ Only set category to Fiction if explicitly cleared
+    if (category !== undefined) {
+      if (category.trim() === '') {
+        category = 'Fiction';
+      }
+      book.category = category;
+    }
+
     book.title = title || book.title;
     book.author = author || book.author;
     book.description = description || book.description;
     book.publishedYear = publishedYear || book.publishedYear;
-    book.category = category || book.category;
 
     const updatedBook = await book.save();
     res.json(updatedBook);
